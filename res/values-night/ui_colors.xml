@@ -42,4 +42,7 @@
     <color name="rising_option_border_color">@android:color/system_accent1_100</color>
     <color name="device_info_rising_version_bg">#d9d9d9</color>
     <color name="device_info_rising_version_text">#000000</color>
+    <color name="ic_device_name_storage_center_color">@android:color/system_accent1_900</color>
+    <color name="ic_device_name_storage_outer_color">@android:color/system_accent1_200</color>
+    <color name="ic_device_name_storage_rectangle_color">@android:color/system_accent3_200</color>
 </resources>

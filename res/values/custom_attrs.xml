@@ -68,5 +68,6 @@
     
     <declare-styleable name="WallpaperView">
         <attr name="blurred" format="boolean" />
+        <attr name="dimLevel" format="integer" />
     </declare-styleable>
 </resources>
