@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Screen off AOD -->
+    <string name="screen_off_aod_enabled_title">Screen Off AOD</string>
+    <string name="screen_off_aod_enabled_summary">Briefly show the Always-On Display when the screen turns off</string>
+
     <!-- Doze on double tap -->
     <string name="double_tap_title">Double tap</string>
     <string name="doze_double_tap_title">Double tap to check phone</string>
