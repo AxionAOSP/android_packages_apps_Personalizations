@@ -30,6 +30,32 @@
             android:title="@string/clear_keybox_title"
             android:summary="@string/clear_keybox_summary" />
 
+        <!-- GMS spoof -->
+        <com.android.settings.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.gms"
+            android:title="@string/gms_spoof_title"
+            android:summary="@string/gms_spoof_summary"
+            android:defaultValue="true"
+            app:position="top"/>
+
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="show_pif_properties"
+            android:title="@string/show_pif_properties_title"
+            android:summary="@string/show_pif_properties_summary"
+            android:dependency="persist.sys.pixelprops.gms"/>
+
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="update_pif_json"
+            android:title="@string/update_pif_json_title"
+            android:summary="@string/update_pif_json_summary"
+            android:dependency="persist.sys.pixelprops.gms" />
+
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="pif_json_file_preference"
+            android:title="@string/pif_spoofing_title"
+            android:summary="@string/pif_spoofing_summary"
+            android:dependency="persist.sys.pixelprops.gms"/>
+
         <!-- Unlimited google photos storage -->
         <com.android.settings.preferences.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.gphotos"
