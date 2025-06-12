@@ -551,7 +551,7 @@
     <string name="notifications_title">Notifications</string>
     <string name="quicksettings_title">Quick Settings</string>
     <string name="sound_title">Sound</string>
-    <string name="statusbar_title">Status Bar</string>
+    <string name="statusbar_title">StatusBar</string>
     <string name="display_title">Display</string>
     <string name="ui_title">User Interface</string>
     <string name="toolbox_title">Toolbox</string>
@@ -2140,6 +2140,7 @@
     <string name="show_ime_space_summary">Enable the input method quick switch feature to switch input methods or hide the on-screen keyboard from the feature bar at the bottom of the screen when typing</string>
 
     <!-- Status bar padding -->
+    <string name="statusbar_summary">Extra StatusBar Settings</string>
     <string name="statusbar_padding">Status bar padding</string>
     <string name="statusbar_top_padding">Top padding</string>
     <string name="statusbar_left_padding">Left padding</string>

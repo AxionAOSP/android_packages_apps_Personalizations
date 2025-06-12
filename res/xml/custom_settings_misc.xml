@@ -57,4 +57,11 @@
         android:summary="@string/spoofing_title_summary"
         android:fragment="com.custom.settings.fragments.Spoof" />
 
+    <Preference
+        android:key="Statusbar"
+        android:icon="@drawable/ic_settings_statusbar"
+        android:title="@string/statusbar_title"
+        android:summary="@string/statusbar_summary"
+        android:fragment="com.custom.settings.fragments.StatusBar"/>
+
 </PreferenceScreen>
