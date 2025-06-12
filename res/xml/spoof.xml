@@ -21,14 +21,19 @@
     android:title="@string/spoofing_title">
 
         <Preference
-            android:key="import_keybox"
-            android:title="@string/import_keybox_title"
-            android:summary="@string/import_keybox_summary" />
-
-        <Preference
             android:key="clear_keybox"
             android:title="@string/clear_keybox_title"
             android:summary="@string/clear_keybox_summary" />
+
+        <Preference
+            android:key="convert_keybox"
+            android:title="@string/convert_keybox_title"
+            android:summary="@string/convert_keybox_summary" />
+
+        <Preference
+            android:key="import_keybox"
+            android:title="@string/import_keybox_title"
+            android:summary="@string/import_keybox_summary" />
 
         <!-- GMS spoof -->
         <com.android.settings.preferences.SystemPropertySwitchPreference

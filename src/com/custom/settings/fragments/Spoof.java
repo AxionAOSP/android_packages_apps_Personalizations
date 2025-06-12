@@ -28,8 +28,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.preference.Preference;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -91,14 +89,6 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
         "SDK_INT"
     };
 
-    private final ActivityResultLauncher<String> mImportKeyboxLauncher = registerForActivityResult(
-            new ActivityResultContracts.GetContent(),
-            uri -> {
-                if (uri != null) {
-                    handleKeyboxImport(uri);
-                }
-            });
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,14 +132,36 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
 
         mImportKeybox = findPreference(KEY_IMPORT_KEYBOX);
         mImportKeybox.setOnPreferenceClickListener(preference -> {
-            mImportKeyboxLauncher.launch("text/xml");
+            openFileSelector(10002);
             return true;
         });
+        
+        Preference convertKeybox = findPreference("convert_keybox");
+        if (convertKeybox != null) {
+            convertKeybox.setOnPreferenceClickListener(preference -> {
+                try {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://axionaosp.github.io/#keybox"));
+                    browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    if (browserIntent.resolveActivity(requireContext().getPackageManager()) != null) {
+                        startActivity(browserIntent);
+                    }
+                } catch (Exception e) {
+                }
+                return true;
+            });
+        }
     }
 
     private void openFileSelector(int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("application/json");
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        if (requestCode == 10001) {
+            intent.setType("application/json");
+        } else if (requestCode == 10002) {
+            intent.setType("text/xml");
+        } else {
+            intent.setType("*/*");
+        }
         startActivityForResult(intent, requestCode);
     }
 
@@ -161,6 +173,8 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
             if (uri != null) {
                 if (requestCode == 10001) {
                     loadPifJson(uri);
+                } else if (requestCode == 10002) {
+                    handleKeyboxImport(uri);
                 }
             }
         }
