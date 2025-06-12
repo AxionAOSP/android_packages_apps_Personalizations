@@ -83,7 +83,7 @@ class BannerPreferenceController(context: Context) : AbstractPreferenceControlle
   }
 
   private fun getOSVersion(): String {
-    return android.os.SystemProperties.get("ro.lineage.build.version", "1.0")
+    return android.os.SystemProperties.get("ro.axion.build.version", "1.0")
   }
 
   private fun getMaintainerName(): String {
