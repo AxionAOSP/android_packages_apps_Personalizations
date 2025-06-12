@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemProperties;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -41,8 +42,9 @@ import com.android.settingslib.search.SearchIndexable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileOutputStream;
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -290,32 +292,68 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
     }
 
     private void handleKeyboxImport(Uri uri) {
-        try (InputStream in = requireContext().getContentResolver().openInputStream(uri);
-             OutputStream out = new FileOutputStream(KEYBOX_PATH)) {
-            byte[] buf = new byte[1024];
-            int len;
-            while ((len = in.read(buf)) > 0) {
-                out.write(buf, 0, len);
+        try (InputStream in = requireContext().getContentResolver().openInputStream(uri)) {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(in);
+            doc.getDocumentElement().normalize();
+
+            JSONObject keyboxJson = new JSONObject();
+
+            NodeList keyboxes = doc.getElementsByTagName("Keybox");
+
+            for (int i = 0; i < keyboxes.getLength(); i++) {
+                Element keyboxElement = (Element) keyboxes.item(i);
+                NodeList keys = keyboxElement.getElementsByTagName("Key");
+
+                for (int j = 0; j < keys.getLength(); j++) {
+                    Element keyElement = (Element) keys.item(j);
+                    String algorithm = keyElement.getAttribute("algorithm").toUpperCase();
+                    if (algorithm.equals("ECDSA")) algorithm = "EC";
+
+                    Element privKeyElem = (Element) keyElement.getElementsByTagName("PrivateKey").item(0);
+                    String privKeyRaw = getRawText(privKeyElem);
+                    String privKey = extractBase64FromPEM(privKeyRaw);
+                    keyboxJson.put(algorithm + ".PRIV", privKey);
+
+                    NodeList certList = keyElement.getElementsByTagName("Certificate");
+                    for (int k = 0; k < certList.getLength(); k++) {
+                        Element certElem = (Element) certList.item(k);
+                        String certRaw = getRawText(certElem);
+                        String cert = extractBase64FromPEM(certRaw);
+                        keyboxJson.put(algorithm + ".CERT_" + (k + 1), cert);
+                    }
+                }
             }
-            setPermissions(KEYBOX_PATH);
+
+            Settings.System.putString(requireContext().getContentResolver(),
+                    "custom_keybox_data", keyboxJson.toString());
+
             showToast(R.string.import_success);
             SystemRestartUtils.showSystemRestartDialog(getContext());
+
         } catch (Exception e) {
             Log.e(TAG, "Keybox import failed", e);
             showToast(R.string.import_failed);
         }
     }
 
-    private void setPermissions(String path) {
-        try {
-            File file = new File(path);
-            file.setReadable(false, false);
-            file.setWritable(false, false);
-            file.setReadable(true, true);
-            file.setWritable(true, true);
-        } catch (Exception e) {
-            Log.e(TAG, "Permission set failed", e);
+    private String getRawText(Element element) {
+        StringBuilder builder = new StringBuilder();
+        NodeList children = element.getChildNodes();
+        for (int i = 0; i < children.getLength(); i++) {
+            Node node = children.item(i);
+            if (node.getNodeType() == Node.TEXT_NODE || node.getNodeType() == Node.CDATA_SECTION_NODE) {
+                builder.append(node.getNodeValue());
+            }
         }
+        return builder.toString().trim();
+    }
+
+    private String extractBase64FromPEM(String pem) {
+        return pem.replaceAll("-----BEGIN [^-]+-----", "")
+                  .replaceAll("-----END [^-]+-----", "")
+                  .replaceAll("[\\r\\n\\s]+", "");
     }
 
     private void showToast(int resId) {
@@ -326,13 +364,9 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
 
     private void clearKeybox() {
         try {
-            File file = new File(KEYBOX_PATH);
-            if (file.exists() && file.delete()) {
-                showToast(R.string.clear_success);
-                SystemRestartUtils.showSystemRestartDialog(getContext());
-            } else {
-                showToast(R.string.clear_failed);
-            }
+            Settings.System.putString(requireContext().getContentResolver(), "custom_keybox_data", null);
+            showToast(R.string.clear_success);
+            SystemRestartUtils.showSystemRestartDialog(getContext());
         } catch (Exception e) {
             Log.e(TAG, "Failed to clear keybox", e);
             showToast(R.string.clear_failed);
