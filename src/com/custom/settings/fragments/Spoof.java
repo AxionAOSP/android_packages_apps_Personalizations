@@ -181,42 +181,22 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
     }
 
     private void showPropertiesDialog() {
-        StringBuilder properties = new StringBuilder();
-        try {
-            JSONObject jsonObject = new JSONObject();
-            String[] keys = {
-                "persist.sys.pihooks_ID",
-                "persist.sys.pihooks_BRAND", 
-                "persist.sys.pihooks_DEVICE",
-                "persist.sys.pihooks_FINGERPRINT",
-                "persist.sys.pihooks_MANUFACTURER",
-                "persist.sys.pihooks_MODEL",
-                "persist.sys.pihooks_PRODUCT",
-                "persist.sys.pihooks_SECURITY_PATCH",
-                "persist.sys.pihooks_DEVICE_INITIAL_SDK_INT",
-                "persist.sys.pihooks_TYPE",
-                "persist.sys.pihooks_TAGS",
-                "persist.sys.pihooks_RELEASE",
-                "persist.sys.pihooks_DEBUG",
-                "persist.sys.pihooks_SDK_INT"
-            };
-            for (String key : keys) {
-                String value = SystemProperties.get(key, null);
-                if (!TextUtils.isEmpty(value)) {
-                    String buildKey = key.replace("persist.sys.pihooks_", "");
-                    jsonObject.put(buildKey, value);
-                }
+        String jsonString = Settings.System.getString(requireContext().getContentResolver(), "pif_props_data");
+        if (TextUtils.isEmpty(jsonString)) {
+            Log.e(TAG, "No spoofing data found in Settings");
+            jsonString = getString(R.string.error_loading_properties);
+        } else {
+            try {
+                JSONObject json = new JSONObject(jsonString);
+                jsonString = json.toString(4).replace("\\/", "/");
+            } catch (JSONException e) {
+                Log.e(TAG, "Malformed JSON in pif_props_data", e);
+                jsonString = getString(R.string.error_loading_properties);
             }
-            String jsonString = jsonObject.toString(4);
-            jsonString = jsonString.replace("\\/", "/");
-            properties.append(jsonString);
-        } catch (JSONException e) {
-            Log.e(TAG, "Error creating JSON from properties", e);
-            properties.append(getString(R.string.error_loading_properties));
         }
         new AlertDialog.Builder(getContext())
             .setTitle(R.string.show_pif_properties_title)
-            .setMessage(properties.toString())
+            .setMessage(jsonString)
             .setPositiveButton(android.R.string.ok, null)
             .show();
     }
@@ -231,18 +211,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
                     Log.d(TAG, "Downloaded JSON data: " + json);
                     JSONObject jsonObject = new JSONObject(json);
                     String spoofedModel = jsonObject.optString("MODEL", "Unknown model");
-                    for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ) {
-                        String key = it.next();
-                        String value = jsonObject.getString(key);
-                        Log.d(TAG, "Setting property: persist.sys.pihooks_" + key + " = " + value);
-                        SystemProperties.set("persist.sys.pihooks_" + key, value);
-                    }
-                    for (String pifKey : PIF_KEYS) {
-                        if (!jsonObject.has(pifKey)) {
-                            Log.d(TAG, "Clearing unspecified property: " + pifKey);
-                            SystemProperties.set("persist.sys.pihooks_" + pifKey, "");
-                        }
-                    }
+                    Settings.System.putString(getActivity().getContentResolver(), "pif_props_data", jsonObject.toString());
                     mHandler.post(() -> {
                         String toastMessage = getString(R.string.toast_spoofing_success, spoofedModel);
                         Toast.makeText(getContext(), toastMessage, Toast.LENGTH_LONG).show();
@@ -269,18 +238,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
                 String json = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
                 Log.d(TAG, "PIF JSON data: " + json);
                 JSONObject jsonObject = new JSONObject(json);
-                for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ) {
-                    String key = it.next();
-                    String value = jsonObject.getString(key);
-                    Log.d(TAG, "Setting PIF property: persist.sys.pihooks_" + key + " = " + value);
-                    SystemProperties.set("persist.sys.pihooks_" + key, value);
-                }
-                for (String pifKey : PIF_KEYS) {
-                    if (!jsonObject.has(pifKey)) {
-                        Log.d(TAG, "Clearing unspecified property: " + pifKey);
-                        SystemProperties.set("persist.sys.pihooks_" + pifKey, "");
-                    }
-                }
+                Settings.System.putString(getActivity().getContentResolver(), "pif_props_data", jsonObject.toString());
             }
         } catch (Exception e) {
             Log.e(TAG, "Error reading PIF JSON or setting properties", e);
