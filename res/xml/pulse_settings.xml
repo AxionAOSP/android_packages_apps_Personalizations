@@ -22,12 +22,6 @@
     android:title="@string/pulse_settings" >
 
     <com.android.settings.preferences.ui.AdaptiveSwitchPreference
-        android:key="navbar_pulse_enabled"
-        android:title="@string/show_navbar_pulse_title"
-        android:summary="@string/show_navbar_pulse_summary"
-        lineage:position="top"/>
-
-    <com.android.settings.preferences.ui.AdaptiveSwitchPreference
         android:key="lockscreen_pulse_enabled"
         android:title="@string/show_lockscreen_pulse_title"
         android:summary="@string/show_lockscreen_pulse_summary"/>
