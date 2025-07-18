@@ -2206,4 +2206,9 @@
     <string name="nt_mistouch_prevention_summary">Prevent screen touches whilst your device is in your pocket.</string>
     <string name="lockscreen_quick_setting_summary">Swipe down on Lock screen to view Quick Settings</string>
     <string name="lockscreen_quick_setting_title">Quick Settings</string>
+    
+    <!-- HDR Display -->
+    <string name="hdr_display_title">HDR Display</string>
+    <string name="hdr_display_summary">Enable peak brightness for HDR content. This will increase battery usage</string>
+    <string name="hdr_max_brightness_percent_title">HDR Display intensity</string>
 </resources>
