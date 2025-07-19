@@ -16,4 +16,5 @@
 -->
 <resources>
     <color name="homepage_rising_background">@android:color/system_accent1_300</color>
+     <color name="nt_app_locker_icon_color">@android:color/system_neutral2_700</color>
 </resources>
