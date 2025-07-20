@@ -2271,4 +2271,16 @@
     <string name="nt_ql_weather_summary">Current weather</string>
     <string name="nt_ql_events_title">Schedule</string>
     <string name="nt_ql_events_summary">Calendar events and reminders</string>
+    
+    <!-- Pulse -->
+    <string name="visualizer_pulse">Pulse Visualizer</string>
+    <string name="visualizer_pulse_summary">Show a bar visualizer on the lock screen while music is playing</string>
+    <string name="visualizer_pulse_rounded_bars_title">Rounded bars</string>
+    <string name="visualizer_pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="visualizer_pulse_color">Visualizer color</string>
+    <string name="visualizer_pulse_bar_count_title">Number of bars</string>
+    <string name="visualizer_pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="visualizer_pulse_color_lavalamp">Lavalamp</string>
+    <string name="visualizer_pulse_color_album">Album art</string>
+    <string name="visualizer_pulse_color_accent">Accent color</string>
 </resources>
