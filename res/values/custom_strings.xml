@@ -2263,4 +2263,12 @@
     <string name="widget_hotspot">Hotspot</string>
     <string name="pick_widgets">Pick Widgets</string>
     <string name="selected_widgets">Selected Widgets</string>
+    
+    <!-- QuickLook -->
+    <string name="quick_look_title">Quick Look</string>
+    <string name="quick_look_summary">Customise what appears on Quick Look</string>
+    <string name="nt_ql_weather_title">Weather</string>
+    <string name="nt_ql_weather_summary">Current weather</string>
+    <string name="nt_ql_events_title">Schedule</string>
+    <string name="nt_ql_events_summary">Calendar events and reminders</string>
 </resources>
