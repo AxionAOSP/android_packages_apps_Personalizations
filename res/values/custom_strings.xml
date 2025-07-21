@@ -888,6 +888,7 @@
     <string name="edge_light_stroke_width_summary">Configure edge light thickness</string>
     <string name="edge_light_style_1">Draw Line</string>
     <string name="edge_light_style_2">Blink/Pulse</string>
+    <string name="edge_light_auto">Automatic</string>
 
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Music ticker</string>
