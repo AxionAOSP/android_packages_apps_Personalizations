@@ -2271,6 +2271,8 @@
     <string name="nt_ql_weather_summary">Current weather</string>
     <string name="nt_ql_events_title">Schedule</string>
     <string name="nt_ql_events_summary">Calendar events and reminders</string>
+    <string name="nt_quicklook_np_title">Now playing</string>
+    <string name="nt_quicklook_np_summary">Show media info when screen is off</string>
     
     <!-- Pulse -->
     <string name="visualizer_pulse">Pulse Visualizer</string>

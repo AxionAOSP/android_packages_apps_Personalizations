@@ -29,6 +29,12 @@
         android:summary="@string/nt_ql_events_summary"
         android:defaultValue="true" />
 
+    <com.android.settings.preferences.SecureSettingSwitchPreference
+        android:key="nt_quicklook_np"
+        android:title="@string/nt_quicklook_np_title"
+        android:summary="@string/nt_quicklook_np_summary"
+        android:defaultValue="false" />
+
     <Preference
         android:title="@string/weather_settings_title"
         android:summary="@string/weather_settings_summary"
