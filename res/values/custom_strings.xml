@@ -2302,4 +2302,6 @@
     <string name="ambient_display_schedule_time_invalid_summary">
         Invalid time range – start and end times are the same.
     </string>
+    <string name="screen_off_aod_enabled">Show info briefly after screen turns off</string>
+    <string name="screen_off_aod_enabled_summary">Keep ambient display on for 5 seconds after the screen turns off</string>
 </resources>
