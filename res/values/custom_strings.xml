@@ -125,6 +125,8 @@
     <!-- Sidebar -->
     <string name="sidebar_title">Sidebar</string>
     <string name="sidebar_summary">Quickly open apps in a floating window</string>
+    <string name="sidebar_pinned">Pinned apps</string>
+    <string name="sidebar_unpinned">Unpinned apps</string>
 
     <!-- Peek Display -->
     <string name="peek_display_notifications_title">Peek display</string>
