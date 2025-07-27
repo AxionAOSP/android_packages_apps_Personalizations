@@ -27,14 +27,4 @@
         android:entryValues="@array/nothing_applocker_locktype_values"
         android:defaultValue="0" />
 
-    <com.android.settings.preferences.SecureSettingListPreference
-        android:key="nothing_applocker_use_private_password"
-        android:title="@string/nt_lock_settings"
-        android:icon="@drawable/app_locker_lock_set_icon"
-        android:summary="%s"
-        android:dialogTitle="@string/nt_lock_settings"
-        android:entries="@array/nt_lock_settings_entries"
-        android:entryValues="@array/nt_lock_settings_values"
-        android:defaultValue="0" />
-
 </PreferenceScreen> 
