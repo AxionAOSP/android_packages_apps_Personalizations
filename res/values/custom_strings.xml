@@ -2290,6 +2290,7 @@
     <string name="visualizer_pulse_color_accent">Accent color</string>
     
     <!-- Ambient -->
+    <string name="always_on_display_title">Always on display</string>
     <string name="ambient_display">Ambient display</string>
     <string name="ambient_display_summary">Show info when screen is off</string>
     <string name="ambient_display_when_to_show">When to show</string>
