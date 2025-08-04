@@ -512,6 +512,8 @@
     <string name="security_title">Security</string>
     <string name="security_summary">Configure privacy and security related features</string>
     <string name="security_settings_footer_text">Note: While bypassing certain restrictions may offer convenience, it could also result in potential privacy risks.</string>
+    <string name="experimental_features_title">Experimental features</string>
+    <string name="experimental_features_summary">Try experimental features</string>
 
      <!-- Device Info screen -->
     <string name="firmware_name_text">AxionOS</string>
