@@ -17,6 +17,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/sidebar_title" >
 
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="demo_sidebar"
+        settings:lottie_rawRes="@raw/nt_lottie_pop_up_view1"
+        settings:searchable="false"/>
+
     <com.android.settings.preferences.SecureSettingSwitchPreference
         android:key="sidebar_feature_enabled"
         android:title="@string/sidebar_title"

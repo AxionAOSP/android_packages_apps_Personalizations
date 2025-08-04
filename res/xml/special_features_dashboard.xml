@@ -31,4 +31,11 @@
             android:fragment="com.android.settings.gestures.GestureSettings"
             settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
+        <Preference
+            android:icon="@drawable/ic_settings_popup_view"
+            android:key="sidebar"
+            android:title="@string/sidebar_title"
+            android:summary="@string/sidebar_summary"
+            android:fragment="com.android.settings.sidebar.FloatingWindows" />
+
 </PreferenceScreen> 
