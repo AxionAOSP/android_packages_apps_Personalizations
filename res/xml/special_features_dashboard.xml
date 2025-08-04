@@ -38,4 +38,17 @@
             android:summary="@string/sidebar_summary"
             android:fragment="com.android.settings.sidebar.FloatingWindows" />
 
+        <!-- Gaming mode -->
+        <Preference
+            android:icon="@drawable/ic_settings_game_mode"
+            android:key="gaming_mode"
+            android:title="@string/gaming_mode_title"
+            android:summary="@string/gaming_mode_summary"
+             >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="io.chaldeaprjkt.gamespace"
+                android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
+        </Preference>
+
 </PreferenceScreen> 
