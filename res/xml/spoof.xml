@@ -15,20 +15,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:title="@string/experimental_features_title" >
+    android:title="@string/spoofing_title" >
 
-    <com.android.settings.preferences.GlobalSettingSwitchPreference
-        android:key="window_ignore_secure"
-        android:icon="@drawable/ic_custom_settings_privacy"
-        android:title="@string/laboratory_ignore_window_secure_title"
-        android:summary="@string/laboratory_ignore_window_secure_summary"
-        android:defaultValue="false"/>
+        <!-- Unlimited google photos storage -->
+        <com.android.settings.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.gphotos"
+            android:title="@string/use_photos_spoof_title"
+            android:summary="@string/use_photos_spoof_summary"
+            android:defaultValue="true" />
 
-    <Preference
-        android:key="spoofing"
-        android:icon="@drawable/ic_cog"
-        android:title="@string/spoofing_title"
-        android:summary="@string/spoofing_title_summary"
-        android:fragment="com.custom.settings.fragments.Spoof" />
+        <!-- Games spoof -->
+        <com.android.settings.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.gameprops.enable"
+            android:title="@string/use_games_spoof_title"
+            android:summary="@string/use_games_spoof_summary"
+            android:defaultValue="false" />
 
 </PreferenceScreen> 
