@@ -36,13 +36,8 @@
                 android:layout_gravity="bottom|start"
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="20dp"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="6dp"
-                android:text="AxionOS"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:background="@drawable/firmware_name_text_outline" />
+                style="@style/BannerText"
+                android:text="@string/os_name" />
         </FrameLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -81,19 +76,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Device name"
-                    android:textSize="12sp"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    style="@style/TextHeader"
+                    android:text="@string/device_name_header" />
 
                 <TextView
                     android:id="@+id/device_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textStyle="bold"
-                    android:maxLines="1"
-                    android:ellipsize="end" />
+                    style="@style/TextSummary" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -136,17 +126,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Storage"
-                    android:textSize="12sp"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    style="@style/TextHeader"
+                    android:text="@string/storage_header" />
 
                 <TextView
                     android:id="@+id/storage_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textStyle="bold" />
+                    style="@style/TextSummary" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -169,102 +156,84 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Maintainer"
-                    android:textSize="12sp"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    style="@style/TextHeader"
+                    android:text="@string/maintainer_header" />
 
                 <TextView
                     android:id="@+id/maintainer_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textStyle="bold"
+                    style="@style/TextSummary"
                     android:layout_marginBottom="9dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:text="Processor"
-                    android:textSize="12sp"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    style="@style/TextHeader"
+                    android:text="@string/processor_header" />
 
                 <TextView
                     android:id="@+id/processor_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textStyle="bold"
+                    style="@style/TextSummary"
                     android:layout_marginBottom="9dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:text="RAM"
-                    android:textSize="12sp"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    style="@style/TextHeader"
+                    android:text="@string/ram_header" />
 
                 <TextView
                     android:id="@+id/ram_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textStyle="bold"
+                    style="@style/TextSummary"
                     android:layout_marginBottom="9dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Camera"
-                    android:textSize="12sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:layout_marginTop="8dp" />
+                    android:layout_marginTop="8dp"
+                    style="@style/TextHeader"
+                    android:text="@string/camera_header" />
 
                 <TextView
-                    android:id="@+id/camera_info" 
+                    android:id="@+id/camera_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textStyle="bold"
+                    style="@style/TextSummary"
                     android:layout_marginBottom="9dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:text="Battery"
-                    android:textSize="12sp"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    style="@style/TextHeader"
+                    android:text="@string/battery_header" />
 
                 <TextView
                     android:id="@+id/battery_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textStyle="bold"
+                    style="@style/TextSummary"
                     android:layout_marginBottom="9dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Display"
-                    android:textSize="12sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:layout_marginTop="8dp" />
+                    android:layout_marginTop="8dp"
+                    style="@style/TextHeader"
+                    android:text="@string/display_header" />
 
                 <TextView
                     android:id="@+id/display_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textStyle="bold"
+                    style="@style/TextSummary"
                     android:layout_marginBottom="5dp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

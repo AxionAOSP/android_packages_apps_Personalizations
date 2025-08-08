@@ -2314,4 +2314,14 @@
     <string name="power_off_verify_footer">Power off verification protects your device by preventing others from turning it off immediately after it\'s lost, increasing the chances of recovery. You only need to enter your lock screen password when powering off or restarting the phone from the lock screen.</string>
     <string name="power_off_verify_summary">When your device is locked, you\'ll need to use your password to power off or restart.</string>
     <string name="power_off_verify_title">Power off verify</string>
+    
+    <string name="os_name">AxionOS</string>
+    <string name="device_name_header">Device name</string>
+    <string name="storage_header">Storage</string>
+    <string name="maintainer_header">Maintainer</string>
+    <string name="processor_header">Processor</string>
+    <string name="ram_header">RAM</string>
+    <string name="camera_header">Camera</string>
+    <string name="battery_header">Battery</string>
+    <string name="display_header">Display</string>
 </resources>

@@ -101,4 +101,28 @@
         <item name="borderlessButtonStyle">@style/Widget.App.Button.TextButton</item>
         <item name="materialButtonStyle">@style/Widget.Material3.Button.TextButton.Dialog.Flush</item>
     </style>
+    
+    <style name="RomBannerBaseText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextHeader" parent="RomBannerBaseText">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextSummary" parent="RomBannerBaseText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BannerText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/firmware_name_text_outline</item>
+        <item name="android:paddingHorizontal">12dp</item>
+        <item name="android:paddingVertical">6dp</item>
+    </style>
 </resources>
