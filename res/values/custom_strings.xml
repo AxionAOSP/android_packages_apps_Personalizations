@@ -2324,4 +2324,10 @@
     <string name="camera_header">Camera</string>
     <string name="battery_header">Battery</string>
     <string name="display_header">Display</string>
+    
+    <!-- hide dev options -->
+    <string name="hide_dev_options_title">Hide developer options</string>
+    <string name="hide_dev_options_summary">Hide real adb or developer options settings value</string>
+    <string name="hide_dev_options_hidden">Apps with hidden developer settings</string>
+    <string name="hide_dev_options_visible">Apps with visible developer settings</string>
 </resources>

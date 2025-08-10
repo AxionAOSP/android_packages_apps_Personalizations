@@ -31,4 +31,11 @@
         android:summary="@string/spoofing_title_summary"
         android:fragment="com.custom.settings.fragments.Spoof" />
 
+    <Preference
+        android:key="hide_dev_options"
+        android:icon="@drawable/ic_hide"
+        android:title="@string/hide_dev_options_title"
+        android:summary="@string/hide_dev_options_summary"
+        android:fragment="com.custom.settings.fragments.HideDevOptions" />
+
 </PreferenceScreen> 
