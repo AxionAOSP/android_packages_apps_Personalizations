@@ -2330,4 +2330,8 @@
     <string name="hide_dev_options_summary">Hide real adb or developer options settings value</string>
     <string name="hide_dev_options_hidden">Apps with hidden developer settings</string>
     <string name="hide_dev_options_visible">Apps with visible developer settings</string>
+    
+    <!-- Perf Mode -->
+    <string name="performance_mode_title">Performance Mode</string>
+    <string name="performance_mode_summary">Boost system performance. Increases battery usage.</string>
 </resources>
