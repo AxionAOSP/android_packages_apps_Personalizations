@@ -2343,4 +2343,8 @@
     <string name="keybox_invalid_xml">Invalid XML: missing required data</string>
     <string name="keybox_file_loaded">XML file loaded</string>
     <string name="keybox_file_read_failed">Failed to read XML</string>
+    
+    <!-- Battery Health -->
+    <string name="battery_health_title">Smart Charging</string>
+    <string name="battery_health_summary">Limit charging to 80% to extend battery lifespan</string>
 </resources>
