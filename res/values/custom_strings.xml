@@ -2369,4 +2369,8 @@
     <string name="refresh_rate_summary">A maximum refresh rate of</string>
     <string name="refresh_rate_high_summary">for smoother scrolling and animations.</string>
     <string name="refresh_rate_standard_summary">for better battery life.</string>
+    
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Notification row transparency</string>
+    <string name="notification_row_transparency_summary">Show translucent quicksettings notifications</string>
 </resources>
