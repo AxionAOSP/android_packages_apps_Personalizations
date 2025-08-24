@@ -305,6 +305,7 @@
     <!-- Play Integrit Fix JSON Update -->
     <string name="toast_spoofing_success">Successfully downloaded pif.json. Spoofing as %1$s for play integrity.</string>
     <string name="toast_spoofing_failure">Failed to spoof properties.</string>
+    <string name="toast_import_success">Successfully imported pif json.</string>
     <string name="update_pif_json_title">Update Play Integrity Fix</string>
     <string name="update_pif_json_summary">Update PIF spoofing device, requires internet connection.</string>
     <string name="show_pif_properties_title">Play Integrity Fix properties</string>
