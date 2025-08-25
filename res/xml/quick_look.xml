@@ -33,7 +33,7 @@
         android:key="nt_quicklook_np"
         android:title="@string/nt_quicklook_np_title"
         android:summary="@string/nt_quicklook_np_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <Preference
         android:title="@string/weather_settings_title"
