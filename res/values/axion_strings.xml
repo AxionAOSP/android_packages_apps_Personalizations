@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Special Features Dashboard -->
+    <string name="custom_settings_title">Special Features</string>
+    <string name="custom_settings_summary">Change icons, themes, and more</string>
+
+    <string name="nt_mistouch_prevention">Mistouch prevention</string>
+    <string name="nt_mistouch_prevention_summary">Prevent screen touches whilst your device is in your pocket.</string>
+    <string name="lockscreen_quick_setting_summary">Swipe down on Lock screen to view Quick Settings</string>
+    <string name="lockscreen_quick_setting_title">Quick Settings</string>
+    
+    <!-- HDR Display -->
+    <string name="hdr_display_title">HDR Display</string>
+    <string name="hdr_display_summary">Enable peak brightness for HDR content. This will increase battery usage</string>
+    <string name="hdr_max_brightness_percent_title">HDR Display intensity</string>
+    
+    <!-- IME button space -->
+    <string name="show_ime_space_title">Show IME button space</string>
+    <string name="show_ime_space_summary">Enable the input method quick switch feature to switch input methods or hide the on-screen keyboard from the feature bar at the bottom of the screen when typing</string>
+    
+    <!-- NT Three finger -->
+    <string name="nt_gesture_three_finger_swipe">Three finger swipe</string>
+    <string name="nt_gesture_three_finger_swipe_summary">Swipe down with three fingers to perform actions.</string>
+    <string name="nt_combination_power_volume_click">Disable power button &amp; volume down button</string>
+    <string name="nt_combination_power_volume_click_summary">Disable the function of taking a screenshot by pressing and holding the power button and the volume down button.</string>
+    
+    <!-- NT AppLocker -->
+    <string name="nt_app_lock">App Locker</string>
+    <string name="nt_app_lock_summary">Lock the app and unlock with authentication</string>
+    <string name="nt_app_locked_category_title">Locked Apps</string>
+    <string name="nt_app_unlocked_category_title">Unlocked Apps</string>
+    <string name="app_lock_auth_title">Re-enter your pin</string>
+    <string name="app_lock_auth_subtitle">Enter your pin to continue</string>
+    <string name="app_locker_lock_app_when">Lock app when</string>
+    <string name="app_locker_screen_is_locked">Screen is locked</string>
+    <string name="app_locker_screen_is_locked_or_app_exists">Screen is locked or app exits</string>
+    <string name="nt_lock_settings">Lock settings</string>
+    <string name="nt_device_screen_lock">Device screen lock only</string>
+    <string name="nt_device_lock_both">Biometrics or Device screen lock</string>
+    <string name="fragment_title">Settings</string>
+    <string name="authentication_description">Use your device credentials to access this feature</string>
+    <string name="selected_category_title">Selected</string>
+    <string name="unselected_category_title">Unselected</string>
+    <string name="no_selected_apps">No selected apps</string>
+
+    <!-- Lockscreen Widgets -->
+    <string name="lockscreen_widgets_title">Lockscreen Widgets</string>
+    <string name="lockscreen_widgets_enabled_title">Enable Lockscreen Widgets</string>
+    <string name="lockscreen_widgets_enabled_summary">Allow widgets on lockscreen</string>
+    <string name="lockscreen_widgets_picker_title">Manage Widgets</string>
+    <string name="lockscreen_widgets_picker_summary">Choose up to 4 lockscreen widgets</string>
+    <string name="reset_to_default">Reset to default</string>
+    <string name="reset_confirmation">Clear all selected widgets?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="widget_removed">Widget removed</string>
+    <string name="undo">Undo</string>
+    <string name="selected_widgets_empty">No widgets selected</string>
+    <string name="selected_widgets_guide">Long press to drag and drop, tap widget to remove.</string>
+    <string name="widget_torch">Torch</string>
+    <string name="widget_wifi">Wi-Fi</string>
+    <string name="widget_data">Data</string>
+    <string name="widget_ringer">Ringer</string>
+    <string name="widget_bt">Bluetooth</string>
+    <string name="widget_hotspot">Hotspot</string>
+    <string name="pick_widgets">Pick Widgets</string>
+    <string name="selected_widgets">Selected Widgets</string>
+    
+    <!-- QuickLook -->
+    <string name="quick_look_title">Quick Look</string>
+    <string name="quick_look_summary">Customise what appears on Quick Look</string>
+    <string name="nt_ql_weather_title">Weather</string>
+    <string name="nt_ql_weather_summary">Current weather</string>
+    <string name="nt_ql_events_title">Schedule</string>
+    <string name="nt_ql_events_summary">Calendar events and reminders</string>
+    <string name="nt_quicklook_np_title">Now playing</string>
+    <string name="nt_quicklook_np_summary">Show media info when screen is off</string>
+    
+    <!-- Pulse -->
+    <string name="visualizer_pulse">Pulse Visualizer</string>
+    <string name="visualizer_pulse_summary">Show a bar visualizer on the lock screen while music is playing</string>
+    <string name="visualizer_pulse_rounded_bars_title">Rounded bars</string>
+    <string name="visualizer_pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="visualizer_pulse_color">Visualizer color</string>
+    <string name="visualizer_pulse_bar_count_title">Number of bars</string>
+    <string name="visualizer_pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="visualizer_pulse_color_lavalamp">Lavalamp</string>
+    <string name="visualizer_pulse_color_album">Album art</string>
+    <string name="visualizer_pulse_color_accent">Accent color</string>
+    
+    <!-- Ambient -->
+    <string name="always_on_display_title">Always on display</string>
+    <string name="ambient_display">Ambient display</string>
+    <string name="ambient_display_summary">Show info when screen is off</string>
+    <string name="ambient_display_when_to_show">When to show</string>
+    <string name="ambient_display_always_title">Always</string>
+    <string name="ambient_display_always_summary">Consumes more power</string>
+    <string name="ambient_display_schedule_title">Schedule</string>
+    <string name="ambient_display_schedule_summary">Turn on at custom time</string>
+    <string name="ambient_display_charging_title">Charging</string>
+    <string name="ambient_display_charging_summary">Enable Ambient display when charging</string>
+    <string name="ambient_display_start_time">Start time</string>
+    <string name="ambient_display_end_time">End time</string>
+    <string name="ambient_display_schedule_time_invalid_summary">
+        Invalid time range – start and end times are the same.
+    </string>
+    <string name="screen_off_aod_enabled">Show info briefly after screen turns off</string>
+    <string name="screen_off_aod_enabled_summary">Keep ambient display on for 5 seconds after the screen turns off</string>
+
+    <!-- Power off verify -->
+    <string name="power_off_verify_footer">Power off verification protects your device by preventing others from turning it off immediately after it\'s lost, increasing the chances of recovery. You only need to enter your lock screen password when powering off or restarting the phone from the lock screen.</string>
+    <string name="power_off_verify_summary">When your device is locked, you\'ll need to use your password to power off or restart.</string>
+    <string name="power_off_verify_title">Power off verify</string>
+    
+    <string name="os_name">AxionOS</string>
+    <string name="device_name_header">Device name</string>
+    <string name="storage_header">Storage</string>
+    <string name="maintainer_header">Maintainer</string>
+    <string name="processor_header">Processor</string>
+    <string name="ram_header">RAM</string>
+    <string name="camera_header">Camera</string>
+    <string name="battery_header">Battery</string>
+    <string name="display_header">Display</string>
+    
+    <!-- hide dev options -->
+    <string name="hide_dev_options_title">Hide developer options</string>
+    <string name="hide_dev_options_summary">Hide real adb or developer options settings value</string>
+    <string name="hide_dev_options_hidden">Apps with hidden developer settings</string>
+    <string name="hide_dev_options_visible">Apps with visible developer settings</string>
+    
+    <!-- hide app list -->
+    <string name="hide_app_list_hidden">Apps hidden from other user apps</string>
+    <string name="hide_app_list_visible">Apps visible to other user apps</string>
+    
+    <!-- Perf Mode -->
+    <string name="performance_mode_title">Performance Mode</string>
+    <string name="performance_mode_summary">Boost system performance. Increases battery usage.</string>
+    
+    <!-- Keybox Data -->
+    <string name="keybox_data_title">Select keybox XML file</string>
+    <string name="keybox_data_summary">Choose the keybox XML file to spoof key attestation system-wide for all apps. Click the delete button to remove the keybox data and disable spoofing</string>
+    <string name="keybox_data_cleared">XML data cleared</string>
+    <string name="keybox_invalid_file">Invalid file selected</string>
+    <string name="keybox_invalid_xml">Invalid XML: missing required data</string>
+    <string name="keybox_file_loaded">XML file loaded</string>
+    <string name="keybox_file_read_failed">Failed to read XML</string>
+    
+    <!-- Battery Health -->
+    <string name="battery_health_title">Smart Charging</string>
+    <string name="battery_health_summary">Limit charging to 80% to extend battery lifespan</string>
+        
+    <!-- Refresh rate -->
+    <string name="refresh_rate_settings_title">Display Refresh Rate</string>
+    <string name="refresh_rate_dynamic">Dynamic</string>
+    <string name="refresh_rate_high">High</string>
+    <string name="refresh_rate_standard">Standard</string>
+    <string name="refresh_rate_dynamic_summary">
+        Dynamically switch refresh rate according to content to optimize battery life.
+    </string>
+    <string name="refresh_rate_summary">A maximum refresh rate of</string>
+    <string name="refresh_rate_high_summary">for smoother scrolling and animations.</string>
+    <string name="refresh_rate_standard_summary">for better battery life.</string>
+    
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Notification row transparency</string>
+    <string name="notification_row_transparency_summary">Show translucent quicksettings notifications</string>
+</resources>
