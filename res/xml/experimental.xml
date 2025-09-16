@@ -25,6 +25,13 @@
         android:defaultValue="false"/>
 
     <Preference
+        android:key="performance"
+        android:icon="@drawable/ic_performance_mode"
+        android:title="@string/performance_title"
+        android:summary="@string/performance_summary"
+        android:fragment="com.custom.settings.fragments.Performance" />
+
+    <Preference
         android:key="security"
         android:icon="@drawable/ic_encrypted"
         android:title="@string/security_title"

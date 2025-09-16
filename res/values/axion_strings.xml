@@ -174,4 +174,20 @@
     <string name="auto_hbm_lux_on_summary">Ambient light level at which high brightness mode will turn on</string>
     <string name="auto_hbm_lux_off_title">HBM Deactivation Threshold</string>
     <string name="auto_hbm_lux_off_summary">Ambient light level below which high brightness mode will turn off</string>
+    
+    <!-- CPU Boost -->
+    <string name="performance_title">Performance</string>
+    <string name="performance_summary">Enable performance features for smoother experience.</string>
+    <string name="cpu_boost_title">CPU Boost</string>
+    <string name="cpu_boost_summary">Boost CPU during animations/flings.</string>
+    <string name="big_core_boost_title">Big Core Boost</string>
+    <string name="big_core_boost_summary">Use high-power cores during animations/flings for smoother experience.</string>
+    <string name="graphics_boost_title">Graphics Boost</string>
+    <string name="graphics_boost_summary">Improve rendering performance during animations/flings.</string>
+    <string name="input_touch_boost_title">Touch Boost</string>
+    <string name="input_touch_boost_summary">Boost on touch input.</string>
+    <string name="axion_min_freq_boost_title">Little Core Min Frequency Boost</string>
+    <string name="axion_min_freq_boost_summary">Set the minimum interaction CPU frequency boost for the little CPUs.</string>
+    <string name="axion_min_freq_big_boost_title">Big Core Min Frequency Boost</string>
+    <string name="axion_min_freq_big_boost_summary">Set the minimum interaction CPU frequency boost for the big CPUs.</string>
 </resources>
