@@ -17,7 +17,11 @@
 package com.custom.settings;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
+import androidx.preference.Preference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -39,6 +43,28 @@ public class PersonalizationsFragment extends DashboardFragment {
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.special_features_dashboard;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Preference gamingModePref = findPreference("gaming_mode");
+        if (gamingModePref != null) {
+            gamingModePref.setOnPreferenceClickListener(pref -> {
+                Intent intent = new Intent();
+                intent.setClassName(
+                        "io.chaldeaprjkt.gamespace",
+                        "io.chaldeaprjkt.gamespace.settings.SettingsActivity"
+                );
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                }
+                return true;
+            });
+        }
     }
 
      @Override
