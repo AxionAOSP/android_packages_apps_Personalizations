@@ -112,7 +112,6 @@
             android:key="axion_prime_core_boost"
             android:title="@string/prime_core_boost_title"
             android:summary="@string/prime_core_boost_summary"
-            android:dependency="axion_big_core_boost"
             android:defaultValue="false"/>
 
         <com.android.settings.preferences.SecureSettingSeekBarPreference
@@ -139,6 +138,26 @@
             settings:min="0"
             settings:interval="100000"
             settings:units="MHz"/>
+    </PreferenceCategory>
+
+    <!-- GPU -->
+    <PreferenceCategory
+        android:key="axion_gpu"
+        android:title="@string/gpu_title">
+
+        <com.android.settings.preferences.SecureSettingSeekBarPreference
+            android:key="axion_game_gpu_boost_level"
+            android:title="@string/axion_game_gpu_boost_title"
+            android:summary="@string/axion_game_gpu_boost_summary"
+            settings:min="0"
+            settings:units="Level"/>
+
+        <com.android.settings.preferences.SecureSettingSeekBarPreference
+            android:key="axion_sys_gpu_boost_level"
+            android:title="@string/axion_sys_gpu_boost_title"
+            android:summary="@string/axion_sys_gpu_boost_summary"
+            settings:min="0"
+            settings:units="Level"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

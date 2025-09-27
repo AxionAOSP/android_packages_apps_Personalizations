@@ -209,4 +209,9 @@
     <string name="axion_max_freq_big_summary">Sets the maximum frequency for big cores. Lower values save battery, higher values improve performance.</string>
     <string name="axion_max_freq_prime_title">Maximum Frequency – Prime</string>
     <string name="axion_max_freq_prime_summary">Sets the maximum frequency for prime cores. Lower values save battery, higher values improve performance.</string>
+    <string name="gpu_title">GPU</string>
+    <string name="axion_game_gpu_boost_title">Game GPU Boost Level</string>
+    <string name="axion_game_gpu_boost_summary">Set the GPU boost level for gaming scenarios</string>
+    <string name="axion_sys_gpu_boost_title">System GPU Boost Level</string>
+    <string name="axion_sys_gpu_boost_summary">Set the GPU boost level for system/UI scenarios</string>
 </resources>

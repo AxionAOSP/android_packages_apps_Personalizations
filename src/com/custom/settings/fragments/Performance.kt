@@ -49,6 +49,36 @@ class Performance : BasePreferenceFragment(R.xml.performance) {
                 }
             }
         }
+
+        configureGpu()
+    }
+
+    private fun configureGpu() {
+        val freqsPath = SystemProperties.get("persist.sys.axion_gpu_freqs_path", "")
+        val minFreqFile = SystemProperties.get("persist.sys.axion_gpu_minfreq_file", "")
+
+        val gpuCategory = findPreference<PreferenceCategory>("axion_gpu")
+
+        if (freqsPath.isNullOrEmpty() || minFreqFile.isNullOrEmpty()) {
+            gpuCategory?.let { preferenceScreen.removePreference(it) }
+            return
+        }
+
+        val maxLevels = SystemProperties.getInt("persist.sys.axion_gpu_levels", 0)
+        if (maxLevels <= 0) {
+            gpuCategory?.let { preferenceScreen.removePreference(it) }
+            return
+        }
+
+        findPref("axion_game_gpu_boost_level")?.apply {
+            setMax(maxLevels)
+            setDefaultValue(1)
+        }
+
+        findPref("axion_sys_gpu_boost_level")?.apply {
+            setMax(maxLevels)
+            setDefaultValue(1)
+        }
     }
 
     private fun configureCluster(cluster: Cluster) {
