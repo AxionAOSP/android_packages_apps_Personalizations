@@ -1665,4 +1665,22 @@
         <item>album</item>
         <item>accent</item>
     </string-array>
+    
+    <string-array name="widget_keys">
+        <item>torch</item>
+        <item>wifi</item>
+        <item>data</item>
+        <item>ringer</item>
+        <item>bluetooth</item>
+        <item>hotspot</item>
+    </string-array>
+
+    <string-array name="widget_labels">
+        <item>@string/widget_torch</item>
+        <item>@string/widget_wifi</item>
+        <item>@string/widget_data</item>
+        <item>@string/widget_ringer</item>
+        <item>@string/widget_bluetooth</item>
+        <item>@string/widget_hotspot</item>
+    </string-array>
 </resources>

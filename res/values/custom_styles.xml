@@ -125,4 +125,10 @@
         <item name="android:paddingHorizontal">12dp</item>
         <item name="android:paddingVertical">6dp</item>
     </style>
+    
+    <style name="Theme.Material3.DayNight.NoActionBar.Fullscreen" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
 </resources>
