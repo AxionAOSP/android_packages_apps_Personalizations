@@ -44,8 +44,7 @@ fun LockscreenPreviewTheme(content: @Composable () -> Unit) {
 
 @Composable
 fun WidgetIcon(widget: String): ImageVector {
-    val context = LocalContext.current
-    val keys = context.resources.getStringArray(R.array.widget_keys)
+    val keys = stringArrayResource(R.array.widget_keys)
     return when (widget) {
         keys[0] -> Icons.Filled.FlashlightOff
         keys[1] -> Icons.Filled.WifiOff
@@ -59,17 +58,15 @@ fun WidgetIcon(widget: String): ImageVector {
 
 @Composable
 fun WidgetLabel(widget: String): String {
-    val context = LocalContext.current
-    val keys = context.resources.getStringArray(R.array.widget_keys)
-    val labels = context.resources.getStringArray(R.array.widget_labels)
+    val keys = stringArrayResource(R.array.widget_keys)
+    val labels = stringArrayResource(R.array.widget_labels)
     val index = keys.indexOf(widget)
     return if (index != -1 && index < labels.size) labels[index] else widget
 }
 
 @Composable
 fun WidgetsList(): List<String> {
-    val context = LocalContext.current
-    return context.resources.getStringArray(R.array.widget_keys).toList()
+    return stringArrayResource(R.array.widget_keys).toList()
 }
 
 @Composable
