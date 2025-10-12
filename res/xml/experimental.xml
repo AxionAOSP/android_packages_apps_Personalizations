@@ -39,6 +39,12 @@
         android:fragment="com.custom.settings.fragments.Security" />
 
     <Preference
+        android:key="statusbar"
+        android:icon="@drawable/ic_settings_statusbar"
+        android:title="@string/statusbar_summary"
+        android:fragment="com.custom.settings.fragments.StatusBar" />
+
+    <Preference
         android:key="spoofing"
         android:icon="@drawable/ic_cog"
         android:title="@string/spoofing_title"
