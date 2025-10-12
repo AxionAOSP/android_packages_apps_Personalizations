@@ -45,14 +45,12 @@
     <string name="unselected_category_title">Unselected</string>
     <string name="no_selected_apps">No selected apps</string>
 
-    <!-- Lockscreen Widgets -->
+    <!-- Lockscreen -->
+    <string name="lockscreen_customize_title">Lockscreen appearance</string>
+    <string name="lockscreen_customize_summary">Customize lockscreen appearance</string>
     <string name="lockscreen_widgets_title">Lockscreen Widgets</string>
     <string name="lockscreen_widgets_enabled_title">Enable Lockscreen Widgets</string>
     <string name="lockscreen_widgets_enabled_summary">Allow widgets on lockscreen</string>
-    <string name="lockscreen_widgets_picker_title">Manage Widgets</string>
-    <string name="lockscreen_widgets_picker_summary">Choose up to 4 lockscreen widgets</string>
-    <string name="reset_to_default">Reset to default</string>
-    <string name="reset_confirmation">Clear all selected widgets?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="widget_removed">Widget removed</string>

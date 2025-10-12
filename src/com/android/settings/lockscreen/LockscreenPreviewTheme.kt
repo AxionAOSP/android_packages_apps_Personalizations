@@ -51,7 +51,7 @@ fun WidgetIcon(widget: String): ImageVector {
         keys[2] -> Icons.Filled.SignalCellularOff
         keys[3] -> Icons.Filled.VolumeUp 
         keys[4] -> Icons.Filled.BluetoothDisabled
-        keys[5] -> Icons.Filled.WifiOff
+        keys[5] -> Icons.Filled.WifiTethering
         else -> Icons.Filled.DeviceUnknown
     }
 }
@@ -104,7 +104,7 @@ object Dimens {
     val WeatherSpacerLarge = 8.dp
 
     val WidgetSlot = 72.dp
-    val WidgetSpacing = 24.dp
+    val WidgetSpacing = 12.dp
     val WidgetContainerHeight = 112.dp
     val WidgetContainerPadding = 24.dp
     val WidgetBorderWidth = 1.5.dp

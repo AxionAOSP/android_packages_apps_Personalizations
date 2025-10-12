@@ -22,7 +22,7 @@ import androidx.compose.foundation.*
 import androidx.compose.runtime.*
 import com.android.settings.R
 
-class LockScreenWidgetPickerActivity : ComponentActivity() {
+class LockScreenCustomizeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

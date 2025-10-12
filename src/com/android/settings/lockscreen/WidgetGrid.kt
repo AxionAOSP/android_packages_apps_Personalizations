@@ -60,6 +60,10 @@ fun WidgetGrid(
     onReorder: (List<WidgetItem>) -> Unit,
     onPickWidget: () -> Unit
 ) {
+    val context = LocalContext.current
+    val widgetSlot = context.scaleRatio * WidgetSlot
+    val spacing = context.scaleRatio * WidgetSpacing
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -86,9 +90,9 @@ fun WidgetGrid(
         DragAndDropGrid(
             items = widgetItems,
             span = { it.span },
-            width = { WidgetSlot * it.span },
-            height = { WidgetSlot },
-            spacing = WidgetSpacing,
+            width = { widgetSlot * it.span },
+            height = { widgetSlot },
+            spacing = spacing,
             onReorder = onReorder
         ) { item ->
             item.Render(onRemove = { onUpdate(item) })
