@@ -468,7 +468,8 @@ sealed class ClockItem {
         override fun Render(currentTime: Date) {
             val context = LocalContext.current
             val is24Hour = DateFormat.is24HourFormat(context)
-            val timeStr = SimpleDateFormat(if (is24Hour) "Hmm" else "hmm", Locale.getDefault()).format(currentTime)
+            val timeStr = SimpleDateFormat(if (is24Hour) "Hmm" else "hmm", Locale.getDefault())
+                .format(currentTime)
 
             val bitmaps = remember(digitResIds) {
                 digitResIds.map { resId ->
@@ -487,15 +488,17 @@ sealed class ClockItem {
                     .padding(horizontal = 32.dp)
             ) {
                 val availableWidth = this.maxWidth
-                val totalSpacing = digitSpacing * 2 
-                val digitWidth = (availableWidth - totalSpacing) / 3f
+                val numDigits = timeStr.length
+                val totalSpacing = digitSpacing * (numDigits - 1)
+
+                val digitWidth = (availableWidth - totalSpacing) / numDigits
                 val digitHeight = digitWidth / maxAspectRatio
-                
+
                 val finalDigitWidth = digitWidth * scale
                 val finalDigitHeight = digitHeight * scale
                 val finalSpacing = digitSpacing * scale
 
-                val totalWidth = (finalDigitWidth * 3) + (finalSpacing * 2)
+                val totalWidth = (finalDigitWidth * numDigits) + (finalSpacing * (numDigits - 1))
                 val startOffset = (availableWidth - totalWidth) / 2 + horizontalOffset
 
                 Box(
@@ -510,7 +513,7 @@ sealed class ClockItem {
                         timeStr.forEach { char ->
                             val digitIndex = char.digitToIntOrNull() ?: 0
                             val resId = digitResIds.getOrElse(digitIndex) { digitResIds.first() }
-                            
+
                             Box(
                                 modifier = Modifier
                                     .width(finalDigitWidth)
