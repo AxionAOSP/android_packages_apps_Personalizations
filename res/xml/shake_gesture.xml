@@ -33,7 +33,7 @@
         android:defaultValue="0"
         android:dependency="shake_gestures_enabled" />
 
-     <com.android.settings.preferences.SecureSettingSeekBarPreference
+     <com.android.settings.preferences.SystemSettingSeekBarPreference
         android:key="shake_gestures_intensity"
         android:title="@string/shake_gestures_intensity_title"
         android:summary="@string/shake_gestures_intensity_summary"
