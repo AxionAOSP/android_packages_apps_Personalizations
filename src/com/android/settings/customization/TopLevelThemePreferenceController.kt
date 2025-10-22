@@ -47,6 +47,7 @@ class TopLevelThemePreferenceController(
         if (preferenceKey == preference.key) {
             val intent = Intent().setComponent(ComponentName(themePackage, themeClass))
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.putExtra("is_launch_extra", true)
             mContext.startActivity(intent)
             return true
         }
