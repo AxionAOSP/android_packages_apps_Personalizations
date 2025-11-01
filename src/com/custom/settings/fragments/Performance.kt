@@ -32,12 +32,9 @@ class Performance : BasePreferenceFragment(R.xml.performance) {
         val maxFreqs = freqProp.split(",").mapNotNull { it.toIntOrNull() }
 
         val clusters = listOf(
-            Cluster("axion_cluster_little", maxFreqs.getOrNull(0) ?: 0,
-                "axion_min_freq_boost", "axion_min_freq", "axion_max_freq"),
-            Cluster("axion_cluster_big", maxFreqs.getOrNull(1) ?: 0,
-                "axion_min_freq_big_boost", "axion_min_freq_big", "axion_max_freq_big"),
-            Cluster("axion_cluster_prime", maxFreqs.getOrNull(2) ?: 0,
-                "axion_min_freq_prime_boost", "axion_min_freq_prime", "axion_max_freq_prime")
+            Cluster("axion_cluster_little", maxFreqs.getOrNull(0) ?: 0, "axion_min_freq", "axion_max_freq"),
+            Cluster("axion_cluster_big", maxFreqs.getOrNull(1) ?: 0, "axion_min_freq_big", "axion_max_freq_big"),
+            Cluster("axion_cluster_prime", maxFreqs.getOrNull(2) ?: 0, "axion_min_freq_prime", "axion_max_freq_prime")
         )
 
         clusters.forEach { cluster ->
@@ -74,19 +71,9 @@ class Performance : BasePreferenceFragment(R.xml.performance) {
             setMax(maxLevels)
             setDefaultValue(1)
         }
-
-        findPref("axion_sys_gpu_boost_level")?.apply {
-            setMax(maxLevels)
-            setDefaultValue(1)
-        }
     }
 
     private fun configureCluster(cluster: Cluster) {
-        findPref(cluster.boostKey)?.apply {
-            setMax(cluster.max)
-            setDefaultValue(1000000)
-        }
-
         findPref(cluster.userMinKey)?.apply {
             setMax(cluster.max)
             setDefaultValue(0)
@@ -104,7 +91,6 @@ class Performance : BasePreferenceFragment(R.xml.performance) {
     private data class Cluster(
         val categoryKey: String,
         val max: Int,
-        val boostKey: String,
         val userMinKey: String,
         val userMaxKey: String
     )
