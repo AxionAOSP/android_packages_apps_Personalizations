@@ -17,10 +17,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/performance_title">
 
+    <com.android.settings.preferences.SecureSettingSwitchPreference
+        android:key="axion_sf_boost"
+        android:title="@string/display_boost_title"
+        android:summary="@string/display_boost_summary"
+        android:defaultValue="true"/>
+
+    <com.android.settings.preferences.SecureSettingSwitchPreference
+        android:key="axion_touch_boost"
+        android:title="@string/input_touch_boost_title"
+        android:summary="@string/input_touch_boost_summary"
+        android:defaultValue="false"/>
+
     <!-- Little cluster -->
     <PreferenceCategory
         android:key="axion_cluster_little"
         android:title="@string/cluster_little_title">
+
+        <com.android.settings.preferences.SecureSettingSwitchPreference
+            android:key="axion_cpu_boost"
+            android:title="@string/cpu_boost_title"
+            android:summary="@string/cpu_boost_summary"
+            android:defaultValue="true"/>
+
+        <com.android.settings.preferences.SecureSettingSeekBarPreference
+            android:key="axion_min_freq_boost"
+            android:title="@string/axion_min_freq_boost_title"
+            android:summary="@string/axion_min_freq_boost_summary"
+            android:dependency="axion_cpu_boost"
+            settings:min="0"
+            settings:interval="100000"
+            settings:units="MHz"/>
 
         <com.android.settings.preferences.SecureSettingSeekBarPreference
             android:key="axion_min_freq"
@@ -44,6 +71,21 @@
         android:key="axion_cluster_big"
         android:title="@string/cluster_big_title">
 
+        <com.android.settings.preferences.SecureSettingSwitchPreference
+            android:key="axion_big_core_boost"
+            android:title="@string/big_core_boost_title"
+            android:summary="@string/big_core_boost_summary"
+            android:defaultValue="false"/>
+
+        <com.android.settings.preferences.SecureSettingSeekBarPreference
+            android:key="axion_min_freq_big_boost"
+            android:title="@string/axion_min_freq_big_boost_title"
+            android:summary="@string/axion_min_freq_big_boost_summary"
+            android:dependency="axion_big_core_boost"
+            settings:min="0"
+            settings:interval="100000"
+            settings:units="MHz"/>
+
         <com.android.settings.preferences.SecureSettingSeekBarPreference
             android:key="axion_min_freq_big"
             android:title="@string/axion_min_freq_big_title"
@@ -65,6 +107,21 @@
     <PreferenceCategory
         android:key="axion_cluster_prime"
         android:title="@string/cluster_prime_title">
+
+        <com.android.settings.preferences.SecureSettingSwitchPreference
+            android:key="axion_prime_core_boost"
+            android:title="@string/prime_core_boost_title"
+            android:summary="@string/prime_core_boost_summary"
+            android:defaultValue="false"/>
+
+        <com.android.settings.preferences.SecureSettingSeekBarPreference
+            android:key="axion_min_freq_prime_boost"
+            android:title="@string/axion_min_freq_prime_boost_title"
+            android:summary="@string/axion_min_freq_prime_boost_summary"
+            android:dependency="axion_prime_core_boost"
+            settings:min="0"
+            settings:interval="100000"
+            settings:units="MHz"/>
 
         <com.android.settings.preferences.SecureSettingSeekBarPreference
             android:key="axion_min_freq_prime"
@@ -95,6 +152,12 @@
             settings:min="0"
             settings:units="Level"/>
 
+        <com.android.settings.preferences.SecureSettingSeekBarPreference
+            android:key="axion_sys_gpu_boost_level"
+            android:title="@string/axion_sys_gpu_boost_title"
+            android:summary="@string/axion_sys_gpu_boost_summary"
+            settings:min="0"
+            settings:units="Level"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
