@@ -246,4 +246,28 @@
     <string name="double_tap_title">Double tap</string>
     <string name="doze_double_tap_title">Double tap to check phone</string>
     <string name="doze_double_tap_summary">Pulse notifications by a double tap</string>
+    
+    <!-- Spoof -->
+    <string name="gms_spoof_title">Enable GMS Spoof</string>
+    <string name="gms_spoof_summary">Spoof your device to pass Google Play Attestation</string>
+    <!-- PIF spoofing -->
+    <string name="pif_spoofing_title">Select PIF JSON File</string>
+    <string name="pif_spoofing_summary">Pick PIF JSON file to be used for spoofing play integrity</string>
+    <string name="update_pif_json_title">Update from Repository</string>
+    <string name="update_pif_json_summary">Fetch latest PIF from GitHub</string>
+    <string name="update_pif_json_google_title">Fetch latest Google beta PIF</string>
+    <string name="update_pif_json_google_summary">Get latest PIF properties directly from Google</string>
+    <string name="show_pif_properties_title">Show Current Properties</string>
+    <string name="show_pif_properties_summary">Display currently applied PIF properties</string>
+    <string name="toast_import_success">PIF JSON imported successfully</string>
+    <string name="toast_spoofing_success">Spoofing applied successfully for %s</string>
+    <string name="toast_spoofing_failure">Failed to apply spoofing configuration</string>
+    <string name="toast_spoofing_failure_error">Failed to apply spoof: %s</string>
+    <string name="toast_updating_from_repo">Downloading PIF…</string>
+    <string name="toast_fetching_from_google">Fetching latest beta pif from Google…</string>
+    <string name="toast_google_fetch_success">Successfully fetched and applied PIF for %s</string>
+    <string name="toast_google_fetch_failure">Failed to fetch from Google: %s</string>
+    <string name="toast_parse_error">Failed to parse JSON: %s</string>
+    <string name="toast_file_error">Failed to read file: %s</string>
+    <string name="error_loading_properties">No properties configured</string>
 </resources>

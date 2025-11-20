@@ -31,6 +31,12 @@
             android:dependency="persist.sys.pixelprops.gms"/>
 
         <Preference
+            android:key="update_pif_json_google"
+            android:title="@string/update_pif_json_google_title"
+            android:summary="@string/update_pif_json_google_summary"
+            android:dependency="persist.sys.pixelprops.gms" />
+
+        <Preference
             android:key="update_pif_json"
             android:title="@string/update_pif_json_title"
             android:summary="@string/update_pif_json_summary"
