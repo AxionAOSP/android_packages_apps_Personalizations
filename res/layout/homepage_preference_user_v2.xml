@@ -51,7 +51,7 @@
         android:layout_weight="1"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
-        android:paddingStart="@dimen/homepage_preference_text_padding_start_two_pane"
+        android:paddingStart="8dp"
         android:paddingEnd="16dp">
 
         <TextView
